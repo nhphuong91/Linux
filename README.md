@@ -1,2 +1,0 @@
-# Linux
-Stuffs for Linux

@@ -1,0 +1,136 @@
+Create file
+-----------------------------------------------------------------------
+touch file.ext
+-----------------------------------------------------------------------
+
+Create directory
+-----------------------------------------------------------------------
+mkdir -p mydir/mydirr
+-p: self-create parent dir if not existed
+-----------------------------------------------------------------------
+
+Remove directory
+-----------------------------------------------------------------------
+rm -r mydir
+-----------------------------------------------------------------------
+
+Move to directory
+-----------------------------------------------------------------------
+cd mydir
+
+Move to home
+cd ~/
+
+Move out
+cd ..
+-----------------------------------------------------------------------
+
+Edit text file
+-----------------------------------------------------------------------
+sudo vi galfit.feedme //if user doesn't have file editing permissions
+
+For inserting
+Press i //Do required editing
+
+For exiting
+Press Esc
+    :wq //for exiting and saving
+    :q! //for exiting without saving
+-----------------------------------------------------------------------
+
+Stop lightdm/gdm/kdm
+-----------------------------------------------------------------------
+sudo systemctl stop lightdm (or use gdm or kdm instead)
+-----------------------------------------------------------------------
+
+Execute .run file
+-----------------------------------------------------------------------
+chmod +x file.run
+./file.run --dkms (-s or --no-opengl-files if neccessary)
+-----------------------------------------------------------------------
+
+Switch between virtual console (tty)
+-----------------------------------------------------------------------
+sudo init x (x = 1 to 6)
+or
+sudo chvt x
+
+# to check tty#
+tty
+-----------------------------------------------------------------------
+
+Kill X server
+-----------------------------------------------------------------------
+# To stop:
+sudo init 3
+
+# To resume:
+sudo init 5
+-----------------------------------------------------------------------
+# To stop:
+sudo service gdm stop
+
+# To start:
+sudo service gdm start
+or
+startx
+
+# To restart:
+sudo service gdm restart
+-----------------------------------------------------------------------
+
+Stop lightdm/gdm/kdm
+-----------------------------------------------------------------------
+sudo service lightdm stop
+or
+sudo systemctl stop lightdm
+-----------------------------------------------------------------------
+
+To solve error with Nouveau
+-----------------------------------------------------------------------
+sudo update-initramfs -u
+-----------------------------------------------------------------------
+
+Install dkms and build-essential
+-----------------------------------------------------------------------
+sudo apt-get install build-essential dkms
+# Unnecessary for newly installed OS
+-----------------------------------------------------------------------
+
+Check for opengl version
+-----------------------------------------------------------------------
+sudo apt install mesa-utils
+glxinfo | grep "OpenGL version"
+glxinfo | grep '^direct rendering:'
+-----------------------------------------------------------------------
+
+Check for installed dkms kernel module
+-----------------------------------------------------------------------
+dkms status
+-----------------------------------------------------------------------
+
+All about gcc
+-----------------------------------------------------------------------
+Install:
+sudo apt-get install gcc-8 g++-8
+
+Having gcc redirected automatically to gcc-8:
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
+
+Set default:
+sudo update-alternatives --config gcc
+-----------------------------------------------------------------------
+
+Ctrl+C: To abort current action
+
+Check for gcc ver which is used to compile linux kernel
+-----------------------------------------------------------------------
+cat /proc/version
+-----------------------------------------------------------------------
+
+PPA nvidia driver
+-----------------------------------------------------------------------
+sudo add-apt-repository ppa:graphics-drivers/ppa
+-----------------------------------------------------------------------
+
+

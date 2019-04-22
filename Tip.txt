@@ -1,0 +1,2 @@
+Create folder shorcut: Ctrl+Shift and Drag
+Show desktop: Super+D

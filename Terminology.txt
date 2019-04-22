@@ -1,0 +1,5 @@
+tty: a regular terminal device (the console on your server, for example) - teletypewritter
+pts: a psuedo terminal slave (an xterm or an ssh connection) 
+sh: shell
+
+/usr/share/nvidia/nvidia-modsign-crt-69D88D70.der

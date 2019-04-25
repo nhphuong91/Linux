@@ -1,0 +1,3 @@
+Create folder shorcut: Ctrl+Shift and Drag
+Show desktop: Super+D
+Switch between windows of the same application: alt + ~ (any key above Tab)

@@ -133,4 +133,33 @@ PPA nvidia driver
 sudo add-apt-repository ppa:graphics-drivers/ppa
 -----------------------------------------------------------------------
 
+Check for openCV version
+-----------------------------------------------------------------------
+pkg-config --modversion opencv
+or
+/usr/bin/opencv_version
+-----------------------------------------------------------------------
+
+Check for ROS version
+-----------------------------------------------------------------------
+rosversion -d
+-----------------------------------------------------------------------
+
+Check for Python version
+-----------------------------------------------------------------------
+List installed python:
+ls /usr/bin/python*
+
+View version:
+For python2: 
+$ /usr/bin/python -V
+OR
+/usr/bin/python --version
+
+For python3: 
+$ /usr/bin/python3 -V
+OR
+/usr/bin/python3 --version
+-----------------------------------------------------------------------
+
 

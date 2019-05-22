@@ -49,6 +49,11 @@ chmod +x file.run
 ./file.run --dkms (-s or --no-opengl-files if neccessary)
 -----------------------------------------------------------------------
 
+Change access permission
+-----------------------------------------------------------------------
+chmod +x file.xx --> make file executable
+-----------------------------------------------------------------------
+
 Switch between virtual console (tty)
 -----------------------------------------------------------------------
 sudo init x (x = 1 to 6)

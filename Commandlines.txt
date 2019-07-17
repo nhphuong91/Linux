@@ -196,3 +196,29 @@ Check for connected devices with open port 22
 sudo nmap -sS -p 22 192.168.0.0/24
 -----------------------------------------------------------------------
 
+Sync time between different machines
+-----------------------------------------------------------------------
+Check time different:
+ntpdate -q [client ip]
+
+Restart chrony:
+service chrony restart
+
+Tracking:
+chronyc tracking
+
+View sources list:
+chronyc sources -v
+
+Check client list:
+sudo chronyc clients
+
+Other:
+systemctl enable chronyd.service
+systemctl start chronyd.service
+-----------------------------------------------------------------------
+
+View system time
+-----------------------------------------------------------------------
+timedatectl
+-----------------------------------------------------------------------

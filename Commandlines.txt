@@ -135,7 +135,11 @@ Set default:
 sudo update-alternatives --config gcc
 -----------------------------------------------------------------------
 
-Ctrl+C: To abort current action
+Ctrl+C: To stop current jobs (put it to background process)
+top: View running processes
+ps -A: list of running processes
+jobs: view suspended jobs
+
 
 Check for gcc ver which is used to compile linux kernel
 -----------------------------------------------------------------------

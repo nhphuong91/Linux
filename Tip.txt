@@ -1,3 +1,8 @@
 Create folder shorcut: Ctrl+Shift and Drag
 Show desktop: Super+D
 Switch between windows of the same application: alt + ~ (any key above Tab)
+Show/Hide hidden files/directories: Ctrl + H
+if "sudo pip3" not works -> pip3 --user
+Scrolling in terminal:
+_ scroll by line: ctrl + shift + up/down arrow
+_ scroll by page: shift + PageUp/Down

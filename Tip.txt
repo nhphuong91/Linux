@@ -6,3 +6,6 @@ if "sudo pip3" not works -> pip3 --user
 Scrolling in terminal:
 _ scroll by line: ctrl + shift + up/down arrow
 _ scroll by page: shift + PageUp/Down
+Ctrl+D: EOF or Used to terminate input or exit the terminal or shell
+Ctrl+Z: TSTP signal or Used to suspend foreground processes -> bring back by 'fg' or 'bg'
+Ctrl+C: Interrupt (INT signal) or Used to kill foreground processes

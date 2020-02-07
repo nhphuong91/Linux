@@ -256,7 +256,7 @@ all
 find "$PWD"
 -----------------------------------------------------------------------
 
-Lisk disk
+List disk
 -----------------------------------------------------------------------
 sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL
 sudo fdisk -l
@@ -326,4 +326,25 @@ Search for apt package
 apt-cache search <pkg name>*
 or
 apt-cache policy <pkg name>*
+-----------------------------------------------------------------------
+
+Get author description about cmd in terminal
+-----------------------------------------------------------------------
+man <cmd>
+Ex: man sudo
+-----------------------------------------------------------------------
+
+Get estimate file space usage
+-----------------------------------------------------------------------
+du <option> <files>
+Ex: du -hd1
+-d, –max-depth=N : print total for directory only if it is N or fewer levels below command line argument
+-h, –human-readable : print sizes in human readable format
+-----------------------------------------------------------------------
+
+pipe output from "this" to input of "that"
+-----------------------------------------------------------------------
+Use "|"
+Ex: du -hd1 | sort -rh | head -10
+~ du_stdout =>> sort->sort_stdout =>> head->head_stdout
 -----------------------------------------------------------------------

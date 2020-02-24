@@ -151,9 +151,12 @@ Check for gcc ver which is used to compile linux kernel
 cat /proc/version
 -----------------------------------------------------------------------
 
-PPA nvidia driver
+Add PPA launchpad driver
 -----------------------------------------------------------------------
 sudo add-apt-repository ppa:graphics-drivers/ppa
+
+Remove:
+sudo add-apt-repository --remove ppa:graphics-drivers/ppa
 -----------------------------------------------------------------------
 
 Check for openCV version

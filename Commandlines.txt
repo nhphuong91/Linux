@@ -351,3 +351,19 @@ Use "|"
 Ex: du -hd1 | sort -rh | head -10
 ~ du_stdout =>> sort->sort_stdout =>> head->head_stdout
 -----------------------------------------------------------------------
+
+Modify screen resolution
+-----------------------------------------------------------------------
+Show list of monitors and their connectivity:
+xrandr --listmonitors
+or
+xrandr    -> show all connectivities & their available settings
+
+Scale output res by 1.2
+xrandr --output eDP-1-1 --transform 1.2,0,0,0,1.2,0,0,0,1
+-----------------------------------------------------------------------
+
+Get data from/to server
+-----------------------------------------------------------------------
+curl <options> <link to server contents>
+-----------------------------------------------------------------------

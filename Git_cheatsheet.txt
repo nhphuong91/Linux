@@ -1,3 +1,6 @@
+https://nvie.com/posts/a-successful-git-branching-model/
+https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+
 Get git repo
 -----------------------------------------------------------------------
 git clone https://github.com/nhphuong91/Linux.git

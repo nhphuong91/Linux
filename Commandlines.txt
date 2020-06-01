@@ -397,5 +397,14 @@ sudo lshw -c video
 
 Get online dir/files
 -----------------------------------------------------------------------
-wget --recursive --no-parent -r -np -R "index.html*" <link to taget dir/file>
+wget -r -np -R "index.html*" -P <link to saved dir> <link to taget dir/file>
+
+params:
+-P <link to saved dir> or --directory-prefix=<link to saved dir>: save content to target dir
+-np or --no-parent: Not recursively download content in parent dir
+-R or --reject "index.html*": Reject any file like <that>
+-r or --recursive: recursive retreiving
+-nH or --no-host-directories: Disable generation of host-prefixed directories
+--cut-dirs=<number>: Ignore number directory components (top down)
+-l <depth> or --level=depth: Specify recursion maximum depth level depth
 -----------------------------------------------------------------------

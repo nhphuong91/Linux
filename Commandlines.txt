@@ -408,3 +408,8 @@ params:
 --cut-dirs=<number>: Ignore number directory components (top down)
 -l <depth> or --level=depth: Specify recursion maximum depth level depth
 -----------------------------------------------------------------------
+
+Extract .zip/tar/tgz file
+-----------------------------------------------------------------------
+tar -xvzf <file>
+-----------------------------------------------------------------------

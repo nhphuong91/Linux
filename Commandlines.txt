@@ -394,3 +394,8 @@ View graphic interfaces
 lspci -k | grep VGA
 sudo lshw -c video
 -----------------------------------------------------------------------
+
+Get online dir/files
+-----------------------------------------------------------------------
+wget --recursive --no-parent -r -np -R "index.html*" <link to taget dir/file>
+-----------------------------------------------------------------------

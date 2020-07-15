@@ -119,7 +119,8 @@ sudo apt-get install build-essential dkms
 Check for opengl version
 -----------------------------------------------------------------------
 sudo apt install mesa-utils
-glxinfo | grep "OpenGL version"
+glxinfo | 
+"OpenGL version"
 glxinfo | grep '^direct rendering:'
 -----------------------------------------------------------------------
 
@@ -412,4 +413,9 @@ params:
 Extract .zip/tar/tgz file
 -----------------------------------------------------------------------
 tar -xvzf <file>
+-----------------------------------------------------------------------
+
+Filter out output list
+-----------------------------------------------------------------------
+add { | grep <target name>} after command
 -----------------------------------------------------------------------

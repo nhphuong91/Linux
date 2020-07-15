@@ -1,11 +1,25 @@
-Create folder shorcut: Ctrl+Shift and Drag
+Create folder shorcut: Ctrl + Shift and Drag
+
 Show desktop: Super+D
+
 Switch between windows of the same application: alt + ~ (any key above Tab)
+
 Show/Hide hidden files/directories: Ctrl + H
+
 if "sudo pip3" not works -> pip3 --user
+
 Scrolling in terminal:
 _ scroll by line: ctrl + shift + up/down arrow
 _ scroll by page: shift + PageUp/Down
+
 Ctrl+D: EOF or Used to terminate input or exit the terminal or shell
 Ctrl+Z: TSTP signal or Used to suspend foreground processes -> bring back by 'fg' or 'bg'
 Ctrl+C: Interrupt (INT signal) or Used to kill foreground processes
+
+Screenshot:
+_ ctrl + shift + PrtScr -> drag mouse: capture chosen area & store in clipboard
+_ ctrl + alt + PrtScr: capture current window & store in clipboard
+_ ctrl + PrtScr: capture whole screen & store in clipboard
+_ PrtScr: capture whole screen & store in "Pictures"
+_ shift + PrtScr -> drag mouse: capture chosen area & store in "Pictures"
+_ alt + PrtScr: capture current window & store in "Pictures"

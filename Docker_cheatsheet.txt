@@ -19,6 +19,7 @@ docker container ls  (== docker ps)
 docker container ls --all
 docker container ls -aq
 
+docker pull <OPTIONS> <NAME><:TAG|@DIGEST>	# get new image from docker hub
 docker build -t friendlyhello .  # Create image using this directory's Dockerfile
 docker run -p 4000:80 friendlyhello  # Run "friendlyhello" mapping port 4000 to 80
 docker run -d -p 4000:80 friendlyhello         # Same thing, but in detached mode
@@ -32,7 +33,7 @@ docker image rm $(docker image ls -a -q)   # Remove all images from this machine
 docker image prune					# Remove unused images
 docker login             # Log in this CLI session using your Docker credentials
 docker tag <image> username/repository:tag  # Tag <image> for upload to registry
-docker push username/repository:tag            # Upload tagged image to registry
+docker push <options> username/repository:tag            # Upload tagged image to registry
 docker run username/repository:tag                   # Run image from a registry
 
 From attached container terminal:

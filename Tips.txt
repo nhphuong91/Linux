@@ -23,3 +23,9 @@ _ ctrl + PrtScr: capture whole screen & store in clipboard
 _ PrtScr: capture whole screen & store in "Pictures"
 _ shift + PrtScr -> drag mouse: capture chosen area & store in "Pictures"
 _ alt + PrtScr: capture current window & store in "Pictures"
+
+Switching between virtual console (tty):
+_ ctrl + alt + F(1-6)
+F1: Login GUI
+F2: normal GUI
+F3-6: console

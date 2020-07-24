@@ -1,108 +1,123 @@
 Create file
 -----------------------------------------------------------------------
-touch file.ext
+touch <file>.<ext>
 -----------------------------------------------------------------------
 
 Quickly view content of file
 -----------------------------------------------------------------------
-cat [OPTION] [FILE]
+cat <OPTION> <FILE>
 -----------------------------------------------------------------------
 
 Create directory
 -----------------------------------------------------------------------
-mkdir -p mydir/mydirr
+mkdir -p <path>/<target dir>
 -p: self-create parent dir if not existed
 -----------------------------------------------------------------------
 
 Remove directory
 -----------------------------------------------------------------------
-rm -r mydir
+rm -rf <target dir>
+-r: recursive
+-f: forced
 -----------------------------------------------------------------------
 
 Move to directory
 -----------------------------------------------------------------------
-cd mydir
+cd <target dir>
 
-Move to home
-cd ~/
+# Move to home
+cd ~
 
-Move out
+# Move out
 cd ..
 
-Move back to previous dir
+# Move back to previous dir
 cd -
 -----------------------------------------------------------------------
 
-Copy
------------------------------------------------------------------------
 Copy all (forced + recursive)
-cp -f -r [source] [dest]
+-----------------------------------------------------------------------
+cp -fr [source] [dest]
 -----------------------------------------------------------------------
 
 Edit text file
 -----------------------------------------------------------------------
-sudo vi galfit.feedme //if user doesn't have file editing permissions
+sudo vi <file> //if user doesn't have file editing permissions
 
-For inserting
+# For inserting
 Press i //Do required editing
 
-For exiting
+# For exiting
 Press Esc
     :wq //for exiting and saving
     :q! //for exiting without saving
 -----------------------------------------------------------------------
 
-Stop lightdm/gdm/kdm
+All about access permission
 -----------------------------------------------------------------------
-sudo systemctl stop lightdm (or use gdm or kdm instead)
+# View access permission:
+ls -l --> view long list of contents
+
+# Format:
+-rwx---rwx -> divided into 4 parts:
+_ -: file(-) or dir(d) or link(l)
+_ rwx: owner permissions - read(r) or write(w) or executable(x) or non(-)
+_ ---: group
+_ rwx: other users
+
+# Change access permission:
+_ for owner: chmod <add(+) or remove(-)><w/r/x> <file/dir>
+_ for group: chmod g+wrx <file/dir>
+_ for others: chmod o+r <file/dir>
+_ for all:  chmod ugo/a+rx <file/dir>
+
+# Extra: replace <+/-><w/r/x> by below numeric code
+    0 = ---
+    1 = --x
+    2 = -w-
+    3 = -wx
+    4 = r-
+    5 = r-x
+    6 = rw-
+    7 = rwx
+-> ex: chmod 777 <file/dir> => give wrx permission for all users
+
+# Change owner/group of file/dir:
+_ change group: chgrp <group> <file/dir>
+_ change owner: chown <user> <file/dir>
+_ change both: chown <user>:<group> <file/dir>
+
+# References:
+https://help.ubuntu.com/community/FilePermissions
+https://www.pluralsight.com/blog/it-ops/linux-file-permissions
 -----------------------------------------------------------------------
 
-Execute .run file
+Make file executable
 -----------------------------------------------------------------------
-chmod +x file.run
-./file.run --dkms (-s or --no-opengl-files if neccessary)
------------------------------------------------------------------------
-
-Change access permission
------------------------------------------------------------------------
-chmod +x file.xx --> make file executable
+chmod +x <file>
 -----------------------------------------------------------------------
 
 Switch between virtual console (tty)
 -----------------------------------------------------------------------
-sudo init x (x = 1 to 6)
+sudo chvt x (x = 1 to 6)
+
+# to check tty# & which user is logging in it
+who
+-----------------------------------------------------------------------
+
+Kill X server = Stop lightdm/gdm/kdm 
+-----------------------------------------------------------------------
+# To stop:
+sudo service gdm stop (or use lightdm or kdm instead)
 or
-sudo chvt x
+sudo systemctl stop gdm
 
-# to check tty#
-tty
------------------------------------------------------------------------
-
-Kill X server
------------------------------------------------------------------------
-# To stop:
-sudo init 3
-
-# To resume:
-sudo init 5
------------------------------------------------------------------------
-# To stop:
-sudo service gdm stop
-
-# To start:
-sudo service gdm start
+# To start/restart:
+sudo service gdm start/restart
+or
+sudo systemctl start/restart gdm
 or
 startx
-
-# To restart:
-sudo service gdm restart
------------------------------------------------------------------------
-
-Stop lightdm/gdm/kdm
------------------------------------------------------------------------
-sudo service lightdm stop
-or
-sudo systemctl stop lightdm
 -----------------------------------------------------------------------
 
 To solve error with Nouveau
@@ -143,6 +158,7 @@ sudo update-alternatives --config gcc
 
 Ctrl+C: To stop current jobs (put it to background process)
 top: View running processes
+htop: Better tool to view running processes
 ps -A: list of running processes
 jobs: view suspended jobs
 
@@ -198,7 +214,7 @@ Check for USB dev
 -----------------------------------------------------------------------
 lsusb
 or
-ls -l /dev |grep ttyUSB ->> used to detect Arduino
+ls -l /dev | grep ttyUSB ->> used to detect Arduino
 -----------------------------------------------------------------------
 
 Add user to group
@@ -209,6 +225,9 @@ sudo usermod -a -G [group] [user]
 Check for connected devices with open port 22
 -----------------------------------------------------------------------
 sudo nmap -sS -p 22 192.168.0.0/24
+_ /24: first 24 bits are masked (192.168.0) = subnet 255.255.255.0
+_ /16: first 16 bits are masked (192.168) = subnet 255.255.0.0
+_ the rest (unmasked) bits is host
 -----------------------------------------------------------------------
 
 Check for open port of target devices 
@@ -433,4 +452,12 @@ dracut /boot/initramfs-$(uname -r).img $(uname -r)
 Rebuild grub
 -----------------------------------------------------------------------
 sudo grub-mkconfig -o <Output file>[/boot/efi/EFI/centos/grub.cfg]
+-----------------------------------------------------------------------
+
+Control all services
+-----------------------------------------------------------------------
+use systemctl or service 
+
+View stats/stop/start/restart/enable/dissable:
+sudo systemctl <options> <svc>
 -----------------------------------------------------------------------

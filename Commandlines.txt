@@ -461,3 +461,13 @@ use systemctl or service
 View stats/stop/start/restart/enable/dissable:
 sudo systemctl <options> <svc>
 -----------------------------------------------------------------------
+
+Edit auto mount
+-----------------------------------------------------------------------
+sudo vi /etc/fstab
+
+add: <file system>  <mount point>   <type>  <options>   <dump>  <pass>
+ex1: UUID=921356de       none         swap      sw         0       0
+ex2: UUID=921356de       /dev/sda1    ext4   defaults      0       1
+-----------------------------------------------------------------------
+

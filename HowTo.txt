@@ -1,0 +1,32 @@
+Config sftp & ssh
+-----------------------------------------------------------------------
+Config ssh:
+sudo apt install openssh-server
+sudo systemctl enable ssh.service
+-----------------------------------------------------------------------
+Config sftp -> only use when it not works after ssh setup is done:
+sudo nano /etc/ssh/sshd_config
+_ comment out line: "Subsystem      sftp    /usr/lib/openssh/sftp-server"
+_ add: "Subsystem sftp internal-sftp"
+_ add: 
+	"Match Group sftp_users
+	X11Forwarding no
+	AllowTcpForwarding yes
+	ChrootDirectory /"
+_ save
+sudo systemctl restart ssh.service
+sudo groupadd sftp_users
+sudo usermod -aG sftp_users <user>
+-----------------------------------------------------------------------
+
+
+Auto mount
+-----------------------------------------------------------------------
+sudo vi /etc/fstab
+
+add: <file system>  <mount point>   <type>  <options>   <dump>  <pass>
+ex1: UUID=921356de       none         swap      sw         0       0
+ex2: UUID=921356de       /dev/sda1    ext4   defaults      0       1
+-----------------------------------------------------------------------
+
+

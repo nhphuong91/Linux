@@ -52,6 +52,7 @@ or get a specific version of opencv at:
     https://github.com/opencv/opencv/tags
 
 git clone https://github.com/opencv/opencv_contrib.git
+NOTE: version of opencv & opencv_contrib MUST MATCH!!!
 -----------------------------------------------------------
 
 3. Activate venv & install numpy using pip
@@ -81,6 +82,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 Note: Edit "PYTHON_EXECUTABLE" & "OPENCV_EXTRA_MODULES_PATH" depend on venv setup
       PYTHON_DEFAULT_EXECUTABLE may be unnecessary
       PYTHON_EXECUTABLE=<path to venv>/bin/python
+      Use "cmake -LA" to view full options list
 -----------------------------------------------------------
 
 5. Build opencv

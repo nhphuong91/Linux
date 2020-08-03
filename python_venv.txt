@@ -1,0 +1,29 @@
+For more info, see: https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe
+
+
+Method 1 (recommended): virtualenv + pip + pipx -> distributed management
+----------------------------------------------------
+Step 1: Install pipx
+python3 -m pip install pipx
+
+Step 2: Install Virtual environment
+pipx install virtualenv
+
+Step 3: Create dir to store venv
+virtualenv <venv dir name> -> default python interpreter
+or
+virtualenv -p <target python interpreter> <venv dir name> -> specify which python interpreter
+
+Step 4: Activate venv
+source <venv dir>/bin/activate
+
+Step 5: Exist venv
+deactivate
+
+NOTE: When moving venv dir to other location, remember to update path in "activate" file
+----------------------------------------------------
+
+Method 2: pivenv
+----------------------------------------------------
+
+----------------------------------------------------

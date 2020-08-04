@@ -65,24 +65,25 @@ pip install numpy Matplotlib IPython
 cd ~/opencv
 [optional] git checkout <version> (ex: 4.2.0)
 mkdir build && cd build
-cmake -D CMAKE_BUILD_TYPE=RELEASE \
+cmake -D CMAKE_BUILD_TYPE=Release \
     -D CMAKE_INSTALL_PREFIX=/usr/local \
     -D WITH_CUDA=OFF \
     -D INSTALL_PYTHON_EXAMPLES=ON \
-    -D OPENCV_EXTRA_MODULES_PATH=~/opencv_4/opencv_contrib/modules \
+    -D OPENCV_EXTRA_MODULES_PATH=<opencv_contrib>/modules \
     -D OPENCV_ENABLE_NONFREE=ON \
     -D BUILD_EXAMPLES=OFF \
     -D BUILD_NEW_PYTHON_SUPPORT=ON \
     -D BUILD_opencv_python3=ON \
     -D HAVE_opencv_python3=ON \
-    -D PYTHON_EXECUTABLE=~/.virtualenvs/cv/bin/python \
+    -D PYTHON3_EXECUTABLE=<virtualenv dir>/bin/python3 \
     -D PYTHON_DEFAULT_EXECUTABLE=/usr/bin/python3 \
+    -D PYTHON3_PACKAGES_PATH=<virtualenv dir>/lib/python3.6/site-packages/ \
     ..
 
 Note: Edit "PYTHON_EXECUTABLE" & "OPENCV_EXTRA_MODULES_PATH" depend on venv setup
       PYTHON_DEFAULT_EXECUTABLE may be unnecessary
-      PYTHON_EXECUTABLE=<path to venv>/bin/python
-      Use "cmake -LA" to view full options list
+      PYTHON(3)_EXECUTABLE=<virtualenv dir>/bin/python(3)
+      Use "cmake -LA" or use "ccmake ." to view & modify full options list
 -----------------------------------------------------------
 
 5. Build opencv
@@ -96,8 +97,14 @@ sudo make install
 sudo ldconfig
 -----------------------------------------------------------
 
-7. Create symlink to cv2.cpython-36m-x86_64-linux-gnu.so
+7. Done
 -----------------------------------------------------------
-cd ~/.virtualenvs/cv/lib/python3.6/site-packages
+Test "import cv2" in python
+-----------------------------------------------------------
+
+Hotfix if "import cv2" failed:
+_ Create symlink to cv2.cpython-36m-x86_64-linux-gnu.so
+-----------------------------------------------------------
+cd <virtualenv dir>/lib/python3.6/site-packages
 ln -s /usr/local/lib/python3.6/site-packages/cv2/python-3.6/cv2.cpython-36m-x86_64-linux-gnu.so cv2.so
 -----------------------------------------------------------

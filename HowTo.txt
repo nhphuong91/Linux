@@ -49,6 +49,8 @@ ssh -T git@<git domain>
 
 Troubleshoot:
 If not work after step 4, re-cloning git repo using ssh link
+or
+Edit git remote url from http to ssh link (git@...)
 -----------------------------------------------------------------------
 
 Signing git commits with GPG

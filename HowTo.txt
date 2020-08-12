@@ -51,4 +51,32 @@ Troubleshoot:
 If not work after step 4, re-cloning git repo using ssh link
 -----------------------------------------------------------------------
 
+Signing git commits with GPG
+-----------------------------------------------------------------------
+Step 1: Generate the private/public key pair
+gpg --full-gen-key
+or
+gpg2 --full-gen-key
 
+Step 2: Follow  instructions to config: algorithm, key length, validity period, username, 
+					email (verified on git account), protected password
+
+Step 3: List the private GPG key
+gpg --list-secret-keys --keyid-format LONG <your_email>
+
+Step 4: Copy the GPG key ID that starts with "sec <hash type>/"
+ex: sec   rsa4096/30F2B65B9246B6CA -> 30F2B65B9246B6CA
+
+Step 5: Export key & add to GPG field in account setting
+gpg --armor --export <key ID>
+
+Step 6: Associating your GPG key with Git
+Add key 
+git config --<global/local> user.signingkey <key ID>
+
+Auto sign
+git config --<global/local> commit.gpgsign true
+
+Troubleshoot:
+If gpg not available, use "git config --global gpg.program gpg2"
+-----------------------------------------------------------------------

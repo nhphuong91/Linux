@@ -29,3 +29,8 @@ _ ctrl + alt + F(1-6)
 F1: Login GUI
 F2: normal GUI
 F3-6: console
+
+Search & reuse old command:
+Ctrl + R -> type command
+
+

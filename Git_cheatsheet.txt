@@ -4,6 +4,10 @@ https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
 Get git repo
 -----------------------------------------------------------------------
 git clone https://github.com/nhphuong91/Linux.git
+
+Useful options:
+-depth=1 -> useful for git with long commit history (ex: tensorflow, opencv...)
+-bare -> repo that can only be pushed or pulled from, no direct edit
 -----------------------------------------------------------------------
 
 Initialize git

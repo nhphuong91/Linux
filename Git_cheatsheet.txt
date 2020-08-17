@@ -1,18 +1,20 @@
 https://nvie.com/posts/a-successful-git-branching-model/
-https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+https://www.atlassian.com/git/tutorials/
 
 Get git repo
 -----------------------------------------------------------------------
 git clone https://github.com/nhphuong91/Linux.git
 
 Useful options:
--depth=1 -> useful for git with long commit history (ex: tensorflow, opencv...)
--bare -> repo that can only be pushed or pulled from, no direct edit
+--depth=1 -> useful for git with long commit history (ex: tensorflow, opencv...)
+--bare -> repo that can only be pushed or pulled from, no direct edit
 -----------------------------------------------------------------------
 
 Initialize git
 -----------------------------------------------------------------------
 git init <dir>
+
+Useful options: --bare/--templates=<path to tpl dir>
 -----------------------------------------------------------------------
 
 Stage changes
@@ -20,22 +22,31 @@ Stage changes
 git add <dir/file>
 or 
 git stage <dir/file> => preferred
+
+Useful options: -p (choose portions of a file to add to the next commit)
 -----------------------------------------------------------------------
 
 Commit changes
 -----------------------------------------------------------------------
-git commit -a -m "<descriptive msg>"
+git commit -am "<descriptive msg>"
 or 
 git commit -m "<descriptive msg>"
+
+Useful options: --amend (append current staged changes to previous commit)
 -----------------------------------------------------------------------
 
-Redo commits
+Revert commits
 -----------------------------------------------------------------------
-Undo all commits after <commit>, preserving changes locally:
+Undo all commits after <commit> (set the current branch head to <commit>), preserving changes locally:
 git reset <commit>
 
 Discards all history and changes back to the specified commit:
 git reset --hard <commit>
+
+Useful options:
+git reset <options> <commit>
+
+options: hard/mixed/soft/merge/keep
 -----------------------------------------------------------------------
 
 Branches
@@ -80,12 +91,6 @@ Updates your current local working branch:
 git pull
 -----------------------------------------------------------------------
 
-Git global setup
------------------------------------------------------------------------
-git config --global user.name "Phuong Nguyen Hoai"
-git config --global user.email "nhphuong@tma.com.vn"
------------------------------------------------------------------------
-
 Create a new repository
 -----------------------------------------------------------------------
 git clone git@gitlab.tma.com.vn:tic/camera-box.git
@@ -125,7 +130,21 @@ Step 2:
 git push --tags
 -----------------------------------------------------------------------
 
+Config git
+-----------------------------------------------------------------------
+git config <scope> <config>
 
+<scope>: --local/--global/--system
+<config>: user/format/gui/core/color...
+
+ex:
+git config --global user.name "nhphuong91"
+git config --global user.email "nhp12345@gmail.com"
 -----------------------------------------------------------------------
 
+Create alias (shortcut)
 -----------------------------------------------------------------------
+git config --globall alias.<shortkey> <cmd>
+-----------------------------------------------------------------------
+
+

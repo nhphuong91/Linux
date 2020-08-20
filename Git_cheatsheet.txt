@@ -147,4 +147,27 @@ Create alias (shortcut)
 git config --globall alias.<shortkey> <cmd>
 -----------------------------------------------------------------------
 
+Caching change and go back to last commit to edit
+-----------------------------------------------------------------------
+Save change:
+git stash <options: -u (include untracked files)>
+or
+git stash save "<msg or description>"
+
+Restore change:
+git stash pop
+or
+git stash pop stash@{<#>}
+
+List all stash
+git stash list
+
+Remove stash
+git stash clear
+or
+git stash drop stash@{<#>}
+
+Create new branch from caching change & pop it out
+git stash branch <branch name> stash@{<#>}
+-----------------------------------------------------------------------
 

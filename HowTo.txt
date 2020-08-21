@@ -78,10 +78,12 @@ git config --<global/local> user.signingkey <key ID>
 
 Export private key to copy to other machine
 gpg --export-secret-keys --armor <key ID> > <private key name>.key
+or
+gpg --export-secret-keys --armor --output=<private key name>.key <key ID>
 
 Import private key in another computer
 gpg --import <private key name>.key
-gpg --edit-key {<key ID>} trust quit
+gpg --edit-key <key ID> trust quit
 # enter 5<RETURN> (I trust ultimately)
 # enter y<RETURN> (Really set this key to ultimate trust - Yes)
 

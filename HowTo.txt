@@ -69,12 +69,21 @@ gpg --list-secret-keys --keyid-format LONG <your_email>
 Step 4: Copy the GPG key ID that starts with "sec <hash type>/"
 ex: sec   rsa4096/30F2B65B9246B6CA -> 30F2B65B9246B6CA
 
-Step 5: Export key & add to GPG field in account setting
-gpg --armor --export <key ID>
+Step 5: Export public key & add to GPG field in git account setting
+gpg --export --armor <key ID>
 
 Step 6: Associating your GPG key with Git
 Add key 
 git config --<global/local> user.signingkey <key ID>
+
+Export private key to copy to other machine
+gpg --export-secret-keys --armor <key ID> > <private key name>.key
+
+Import private key in another computer
+gpg --import <private key name>.key
+gpg --edit-key {<key ID>} trust quit
+# enter 5<RETURN> (I trust ultimately)
+# enter y<RETURN> (Really set this key to ultimate trust - Yes)
 
 Auto sign
 git config --<global/local> commit.gpgsign true

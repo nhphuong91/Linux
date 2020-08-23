@@ -46,7 +46,7 @@ git reset --hard <commit>
 Useful options:
 git reset <options> <commit>
 
-options: hard/mixed/soft/merge/keep
+Useful options: hard/mixed/soft/merge/keep
 -----------------------------------------------------------------------
 
 Branches
@@ -170,4 +170,18 @@ git stash drop stash@{<#>}
 Create new branch from caching change & pop it out
 git stash branch <branch name> stash@{<#>}
 -----------------------------------------------------------------------
+
+Display commit history
+-----------------------------------------------------------------------
+git log
+
+Useful options:
+-n <# of commit to display>
+--author=<name>
+--grep=<search string>
+<since>..<until>
+--oneline/--stat/-p/<file>
+--graph --decorate --oneline
+-----------------------------------------------------------------------
+
 

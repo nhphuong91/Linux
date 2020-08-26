@@ -184,4 +184,14 @@ Useful options:
 --graph --decorate --oneline
 -----------------------------------------------------------------------
 
+View commit history of file
+-----------------------------------------------------------------------
+git blame <file>
 
+Useful options:
+-L <from line #>,<to line #>: restrict the output to the requested line range
+-e: shows the authors email address instead of username
+-w: ignores whitespace changes
+-M: detects moved or copied lines within in the same file
+-C: detects lines that were moved or copied from other files
+-----------------------------------------------------------------------

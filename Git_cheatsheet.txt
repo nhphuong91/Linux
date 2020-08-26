@@ -199,3 +199,16 @@ Useful options:
 -M: detects moved or copied lines within in the same file
 -C: detects lines that were moved or copied from other files
 -----------------------------------------------------------------------
+
+Remove untracked files from the working tree
+-----------------------------------------------------------------------
+git clean <options>
+-> recursively removing untracked files, starting from the current directory
+
+options:
+-d: include & recurse into untracked dir
+-f: force 
+-n: dry-run -> recommended
+-x: remove ignored files
+-i: interactive mode -> ask what to do in detail
+-----------------------------------------------------------------------

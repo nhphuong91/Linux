@@ -37,16 +37,20 @@ Useful options: --amend (append current staged changes to previous commit)
 
 Revert commits
 -----------------------------------------------------------------------
-Undo all commits after <commit> (set the current branch head to <commit>), preserving changes locally:
-git reset <commit>
+2 methods: reset (best for local commits) & revert (best for pushed commits)
+
+* Reset:
+git reset <options> <commit>
+-> Undo all commits after <commit> (set the current branch head to <commit>), preserving changes locally
 
 Discards all history and changes back to the specified commit:
 git reset --hard <commit>
 
-Useful options:
-git reset <options> <commit>
-
 Useful options: hard/mixed/soft/merge/keep
+
+* Revert:
+git revert HEAD
+-> append a commit which undo previous commit (work for pushed commit)
 -----------------------------------------------------------------------
 
 Branches

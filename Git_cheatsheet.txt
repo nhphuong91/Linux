@@ -230,3 +230,10 @@ git diff --name-only --diff-filter=D -z | xargs -0 git rm --cached
 -> generate a list of the removed files from the working directory and pipe that list to git rm --cached
 -----------------------------------------------------------------------
 
+Changing base (of commits/branches)
+-----------------------------------------------------------------------
+git rebase <target base>
+<target base>: could be either commit/branch...
+
+git rebase --on-to <new base> <old base> <current branch>
+-----------------------------------------------------------------------

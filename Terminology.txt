@@ -2,5 +2,7 @@ tty: a regular terminal device (the console on your server, for example) - telet
 pts: a psuedo terminal slave (an xterm or an ssh connection) 
 sh: shell
 pwd: print working directory
+*/?/[]: wildcards (*: any occurrences - ?: one occurrence - [xxx]: any occurrences within [])
+-> unzip \*.zip: pass the wildcard to the execution 'unzip' (not shell)
 
 /usr/share/nvidia/nvidia-modsign-crt-69D88D70.der

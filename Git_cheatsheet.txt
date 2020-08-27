@@ -212,3 +212,21 @@ options:
 -x: remove ignored files
 -i: interactive mode -> ask what to do in detail
 -----------------------------------------------------------------------
+
+Remove file from working directory, and staging index
+-----------------------------------------------------------------------
+git rm <options> <file>
+
+options:
+-n: dry-run -> state which files are going to be removed
+-r/-f/--/--cached/--ignore-unmatch/q
+
+Undo git rm:
+git reset HEAD
+or
+git checkout .
+
+git diff --name-only --diff-filter=D -z | xargs -0 git rm --cached
+-> generate a list of the removed files from the working directory and pipe that list to git rm --cached
+-----------------------------------------------------------------------
+

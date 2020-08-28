@@ -17,6 +17,22 @@ git init <dir>
 Useful options: --bare/--templates=<path to tpl dir>
 -----------------------------------------------------------------------
 
+Control remote repo
+-----------------------------------------------------------------------
+Adding a remote to current repo
+git remote add <name> <url>
+
+Other actions:
+remove <name> - delete branch
+prune <name> - delete all local with <name> that not present on remote
+rename <old name> <new name> - rename of remote link
+show <name> - inspect remote
+
+Useful options:
+-f: fetch remote
+--tags: fetch tags from remote
+-----------------------------------------------------------------------
+
 Stage changes
 -----------------------------------------------------------------------
 git add <dir/file>
@@ -88,31 +104,11 @@ Uploads all local branch commits:
 git push => ~assume: git push origin master
 
 Upload to target branch/folder:
-git push -u <remote git/branch> <local git/branch>
--> -u: upstream
+git push -u <remote name> <branch to push>
+-> -u: set as default upstream
 
 Updates your current local working branch:
 git pull
------------------------------------------------------------------------
-
-Create a new repository
------------------------------------------------------------------------
-git clone git@gitlab.tma.com.vn:tic/camera-box.git
-cd camera-box
-touch README.md
-git add README.md
-git commit -m "add README"
-git push -u origin master
------------------------------------------------------------------------
-
-Push an existing folder
------------------------------------------------------------------------
-cd existing_folder
-git init
-git remote add origin git@gitlab.tma.com.vn:tic/camera-box.git
-git add .
-git commit -m "Initial commit"
-git push -u origin master
 -----------------------------------------------------------------------
 
 Push an existing Git repository
@@ -239,3 +235,13 @@ git rebase --on-to <new base> <old base> <current branch>
 
 options: --interactive or -i/--d (discard)/--p (preserve)/--x (pick)
 -----------------------------------------------------------------------
+
+View log for recovery
+-----------------------------------------------------------------------
+git reflog
+or
+git reflog show <HEAD/branches/tags/remotes/stash>@{<#>}
+
+<#> could also be "1.minute/hour/day/week/month/year.ago"
+-----------------------------------------------------------------------
+

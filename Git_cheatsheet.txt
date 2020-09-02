@@ -78,10 +78,10 @@ git branch
 Create new branch:
 git branch <name>
 
-switch branch:
+Switch branch:
 git checkout <branch name>
 
-Merg branch:
+Merge branch:
 git merge <branch> =>> ~ pull request
 
 Delete branch:
@@ -110,6 +110,15 @@ git push -u <remote name> <branch to push>
 
 Updates your current local working branch:
 git pull
+
+Delete branch/tag & update to remote:
+git branch -d <branch name>
+git push <remote name> :<branch name>
+or
+git push <remote name> --delete <branch name>
+
+Upload "amend" commit to remote:
+git push --force
 -----------------------------------------------------------------------
 
 Push an existing Git repository

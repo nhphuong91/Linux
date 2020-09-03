@@ -163,7 +163,7 @@ ps -A: list of running processes
 jobs: view suspended jobs
 
 
-Check for gcc ver which is used to compile linux kernel
+Check for gcc version which is used to compile linux kernel
 -----------------------------------------------------------------------
 cat /proc/version
 -----------------------------------------------------------------------
@@ -186,6 +186,21 @@ or
 Check for ROS version
 -----------------------------------------------------------------------
 rosversion -d
+-----------------------------------------------------------------------
+
+Check for cuda version
+-----------------------------------------------------------------------
+cat /usr/local/cuda/version.txt
+-----------------------------------------------------------------------
+
+Check for nvidia driver version
+-----------------------------------------------------------------------
+cat /proc/driver/nvidia/version
+-----------------------------------------------------------------------
+
+Check for cuda compiler version
+-----------------------------------------------------------------------
+nvcc --version
 -----------------------------------------------------------------------
 
 Check for Python version

@@ -20,7 +20,8 @@ source <venv dir>/bin/activate
 Step 5: Exist venv
 deactivate
 
-NOTE: When moving venv dir to other location, remember to update path in "activate" file
+NOTE: When moving venv dir to other location, remember to update path in all files within venv dir
+-> Tips: Open venv dir using vscode; use search & replace to replace /home/<user>/<old path> with /home/<user>/<new path>
 ----------------------------------------------------
 
 Method 2: pivenv

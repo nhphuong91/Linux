@@ -77,12 +77,16 @@ git branch
 
 Create new branch:
 git branch <name>
+or
+git checkout -b <name>
+or
+git checkout -b <new branch> <existing branch>
 
 Switch branch:
 git checkout <branch name>
 
-Merge branch:
-git merge <branch> =>> ~ pull request
+Merge target branch to current checkout branch:
+git merge <target branch> =>> ~ pull request
 
 Delete branch:
 git branch -d <name>

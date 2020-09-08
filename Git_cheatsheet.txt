@@ -262,3 +262,55 @@ git reflog show <HEAD/branches/tags/remotes/stash>@{<#>}
 <#> could also be "1.minute/hour/day/week/month/year.ago"
 -----------------------------------------------------------------------
 
+Merge
+-----------------------------------------------------------------------
+When merge conflict occurr, conflicted file will be edit to:
+
+<<<<<<< HEAD
+<content existing in HEAD of current branch>
+=======
+<content existing in HEAD of target branch>
+>>>>>>> <target branch name>
+
+Solve & avoid conflict:
+1. Direct way: Edit file & commit changes
+2. Tools:
+_ git status - identify conflicted files
+_ git log --merge - produce a log with a list of commits that conflict between the merging branches
+_ git diff - find differences between states of a repository/files
+_ git checkout - undoing changes to files
+_ git reset --mixed - undo changes to the working directory and staging area
+_ git merge --abort - exit from the merge process and return the branch to init state
+_ git reset - reset conflicted files to a know good state
+
+
+Merge strategies:
+git merge -s recursive branch1 branch2
+-> default merge strategy
+-> detect and handle merges involving renames, but currently cannot make use of detected copies
+
+git merge -s resolve branch1 branch2
+-> only resolve two heads using a 3-way merge algorithm
+
+git merge -s octopus branch1 branch2 branch3 branchN
+-> default merge strategy for more than two heads
+
+git merge -s ours branch1 branch2 branchN
+-> the preference effectively ignoring all changes from all other branches
+
+git merge -s subtree branchA branchB
+-> an extension of the recursive strategy
+
+
+Recursive Git Merge Strategy Options:
+_ ours: auto-resolved cleanly by favoring the 'our' version
+_ theirs: opposite of the 'ours' strategy
+_ patience: best used when branches to be merged have extremely diverged
+_ diff-algorithim: allows specification of an explicit diff-algorithm
+_ renormalize: used with merging branches with differing checkin/checkout states
+_ no-normalize: Disables the renormalize option
+_ no-renames: ignore renamed files during the merge
+_ find-renames=n: honor file renames -> default behavior
+_ subtree: strategy operates on two trees and modifies how to make them match on a shared ancestor
+
+-----------------------------------------------------------------------

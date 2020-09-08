@@ -108,6 +108,9 @@ git fetch
 Uploads all local branch commits:
 git push => ~assume: git push origin master
 
+Create remote branches:
+git push <remote name> <branch name>~
+
 Upload to target branch/folder:
 git push -u <remote name> <branch to push>
 -> -u: set as default upstream

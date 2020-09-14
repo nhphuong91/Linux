@@ -195,9 +195,12 @@ git log
 Useful options:
 -n <# of commit to display>
 --author=<name>
---grep=<search string>
+--grep=<msg string>
+-S"<added-line to search>"
 <since>..<until>
---oneline/--stat/-p/<file>
+--after="<year-month-date>"/--before="<year-month-date>"
+--oneline/--stat/-p/-- <file path>
+--no-merges/--merges
 --graph --decorate --oneline
 -----------------------------------------------------------------------
 

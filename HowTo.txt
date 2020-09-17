@@ -93,3 +93,32 @@ git config --<global/local> commit.gpgsign true
 Troubleshoot:
 If gpg not available, use "git config --global gpg.program gpg2"
 -----------------------------------------------------------------------
+
+Switch OS from ubuntu to CentOS
+-----------------------------------------------------------------------
+grub-reboot 2
+reboot
+-----------------------------------------------------------------------
+
+Switch OS from CentOS to ubuntu (Ubuntu installed after CentOS)
+-----------------------------------------------------------------------
+mount /dev/sdb2 /media/mntdrive
+grub2-editenv /media/mntdrive/boot/grub/grubenv set next_entry=0
+
+reboot
+
+after entering Ubuntu:
+grub-editenv - unset next_entry
+-----------------------------------------------------------------------
+
+NOTE:
+CentOS uses grub2 while Ubuntu uses grub
+
+Remote to Ubuntu using VNC (or set automatic login)
+-----------------------------------------------------------------------
+Edit file "/etc/gdm3/custom.conf"
+Uncomment "AutomaticLoginEnable" & "AutomaticLogin"
+Set "AutomaticLogin" to usaged user account
+reboot
+-----------------------------------------------------------------------
+

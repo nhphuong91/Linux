@@ -49,9 +49,17 @@ sudo apt-get update
 sudo apt-get install cuda
 
 Set up the development environment by modifying the PATH and LD_LIBRARY_PATH variables:
+add these lines to ~/.bashrc & restart terminal:
 export PATH=/usr/local/cuda-<version>/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-<version>/lib64\
                          ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+or
+add following lines to ~/.profile & restart OS:
+# set PATH for cuda <version> installation
+if [ -d "/usr/local/cuda-<version>/bin/" ]; then
+    export PATH=/usr/local/cuda-<version>/bin${PATH:+:${PATH}}
+    export LD_LIBRARY_PATH=/usr/local/cuda-<version>/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+fi
 -----------------------------------------------------------------------
 
 Runfile Installer:

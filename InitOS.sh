@@ -6,7 +6,7 @@ sudo add-apt-repository ppa:umang/indicator-stickynotes
 sudo add-apt-repository universe
 sudo apt-get update
 sudo apt-get -y install aptitude
-sudo aptitude -y install git htop cmake \
+sudo aptitude -y install git htop cmake openssh-server\
                          exfat-fuse exfat-utils \
                          ibus-bamboo python-pip python3-pip indicator-stickynotes
 

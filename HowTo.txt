@@ -53,6 +53,32 @@ or
 Edit git remote url from http to ssh link (git@...)
 -----------------------------------------------------------------------
 
+Import ssh private/public ssh key to other computer
+-----------------------------------------------------------------------
+Step 1: Copy private/public key file to ~/.ssh/
+
+Step 2: Change permission of key file
+chown <user name>:<user group> ~/.ssh/id_rsa* -> maybe unnecessary
+chmod 600 ~/.ssh/id_rsa
+chmod 644 ~/.ssh/id_rsa.pub
+
+Step 3: Add key
+ssh-add
+
+Step 4: Verify
+ssh -T git@<git domain>
+-----------------------------------------------------------------------
+
+Removing ssh key
+-----------------------------------------------------------------------
+Step 1: Remove all or specify which key id to remove
+ssh-add
+or
+ssh-add -f <path to file>
+
+Step 2: Delete corresponding key file in ~/.ssh/
+-----------------------------------------------------------------------
+
 Signing git commits with GPG
 -----------------------------------------------------------------------
 Step 1: Generate the private/public key pair

@@ -294,10 +294,10 @@ all
 find "$PWD"
 -----------------------------------------------------------------------
 
-List disk
+List disks/sectors info
 -----------------------------------------------------------------------
 sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL
-sudo fdisk -l
+sudo fdisk -l </dev/sda>
 -----------------------------------------------------------------------
 
 Mount partitions

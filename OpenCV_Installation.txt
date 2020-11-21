@@ -68,6 +68,12 @@ mkdir build && cd build
 cmake -D CMAKE_BUILD_TYPE=Release \
     -D CMAKE_INSTALL_PREFIX=/usr/local \
     -D WITH_CUDA=OFF \
+    -D WITH_CUDNN=ON \
+    -D OPENCV_DNN_CUDA=ON \
+    -D ENABLE_FAST_MATH=1 \
+    -D CUDA_FAST_MATH=1 \
+    -D CUDA_ARCH_BIN=3.0 \
+    -D WITH_CUBLAS=1 \
     -D INSTALL_PYTHON_EXAMPLES=ON \
     -D OPENCV_EXTRA_MODULES_PATH=<path to opencv_contrib dir>/modules \
     -D OPENCV_ENABLE_NONFREE=ON \
@@ -89,6 +95,8 @@ Note: Edit "PYTHON_EXECUTABLE" depend on venv setup
       PYTHON_DEFAULT_EXECUTABLE may be unnecessary
       PYTHON(3)_EXECUTABLE=<virtualenv dir>/bin/python(3)
       Use "cmake -LA" or use "ccmake ." to view & modify full options list
+      Or remove CMakeCache.txt & re-run cmake
+      Or manually edit CMakeCache.txt & CMakeVars.txt
       
 Option for using venv/python3/local scope:
     -D CMAKE_INSTALL_PREFIX=/usr/local \

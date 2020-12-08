@@ -452,6 +452,8 @@ tar -xvzf <file>
 Filter out output list
 -----------------------------------------------------------------------
 add { | grep <target name>} after command
+or
+grep -e <target1> -e <target2> -e <target3> for multiple targets
 -----------------------------------------------------------------------
 
 Create initial ramdisk images for preloading modules (initrd)

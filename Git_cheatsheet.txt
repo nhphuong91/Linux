@@ -79,8 +79,8 @@ Create new branch:
 git branch <name>
 or
 git checkout -b <name>
-or
-git checkout -b <new branch> <existing branch>
+or create new branch from existing branch/commit
+git checkout -b <new branch> <existing branch/commit>
 
 Switch branch:
 git checkout <branch name>
@@ -267,6 +267,14 @@ git reflog show <HEAD/branches/tags/remotes/stash>@{<#>}
 
 Merge
 -----------------------------------------------------------------------
+Merge branch from different repo:
+Step 1: Create & checkout branch to be merged
+Step 2: pull target branch
+git pull <repo url>.git <branch>
+Step 3: merge target branch to current branch
+git merge <target branch> --allow-unrelated-histories
+Step 4: (Optional) Solve merge conflict
+
 When merge conflict occurr, conflicted file will be edit to:
 
 <<<<<<< HEAD

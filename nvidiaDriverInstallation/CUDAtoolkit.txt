@@ -51,11 +51,22 @@ sudo apt-get install cuda
 Set up the development environment by modifying the PATH and LD_LIBRARY_PATH variables:
 _ Create symlink from /usr/local/cuda to /usr/local/cuda-<version> (rm existing symlink cuda if necessary)
 sudo ln -s /usr/local/cuda-<version> /usr/local/cuda
-_ Add these lines to ~/.bashrc & restart terminal
+_ Method 1: Using .bashrc
+ + Add these lines to ~/.bashrc & restart terminal
 export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64\
                          ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-or, add /usr/local/cuda-<version>/lib64 to /etc/ld.so.conf and run ldconfig as root
+or, add /usr/local/cuda-<version>/lib64 to /etc/ld.so.conf.d/<cuda>.conf and run ldconfig as root
+
+_ Method 2: Using /etc/ld.so.conf.d/<cuda>.conf & /etc/profile.d/<cuda>.sh => for CentOS (the same with installing TensorRT)
+ + Add file <cuda>.sh to /etc/profile.d/ for configuring PATH env var
+  - add below content to .sh file
+if [ -d "/usr/local/cuda/bin/" ]; then
+    pathmunge /usr/local/cuda/bin
+    pathmunge /usr/local/cuda/nsight-compute-2019.5.0
+fi
+ + Add file <cuda>.conf to /etc/ld.so.conf.d/ then run `sudo ldconfig` for configuring LD_LIBRARY_PATH env var
+  - Content of .conf file is the path only: /usr/local/cuda/lib64
 -----------------------------------------------------------------------
 
 Runfile Installer:

@@ -235,6 +235,7 @@ ls -l /dev | grep ttyUSB ->> used to detect Arduino
 Add user to group
 -----------------------------------------------------------------------
 sudo usermod -a -G [group] [user]
+then logout & login again for the permission to take effect
 -----------------------------------------------------------------------
 
 Check for connected devices with open port 22

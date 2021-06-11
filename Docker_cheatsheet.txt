@@ -38,6 +38,26 @@ docker run username/repository:tag                   # Run image from a registry
 
 From attached container terminal:
 ctrl+P+Q: detach
-	
+docker attach <container>: re-attach terminal to running container
+
+Migrate docker root directory to different drive
+1. Change drive mounting config
+remove "nosuid"
+2. Stop docker deamon
+sudo service docker stop
+3. Create or edit /etc/docker/daemon.json and add
+{ 
+   "data-root": "/path/to/your/new/docker/root"
+}
+4. Copy the current data directory to the new one
+sudo rsync -aP /var/lib/docker/ "/path/to/your/new/docker/root"
+sudo cp -rp /var/lib/docker/* "/path/to/your/new/docker/root/"
+5. Rename the old docker directory
+sudo mv /var/lib/docker /var/lib/docker.old
+6. Restart the docker daemon
+sudo service docker start
+7. Test -> OK -> remove docker.old
+docker inspect <image ID>
+-> find "WorkDir"
 
 docker run -it --name test_v1 --net=host --mount type=bind,source=/home/nhphuong/catkin_ws,target=/catkin_ws nhphuong91/my_repo:v1.0.1

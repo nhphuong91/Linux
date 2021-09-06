@@ -152,3 +152,16 @@ Fix "nvidia persistence daemon failed"
 -----------------------------------------------------------------------
 sudo apt --fix-broken install
 -----------------------------------------------------------------------
+
+Desktop-remote stuff
+-----------------------------------------------------------------------
+Enable X11 forward:
+_ Uncomment and set "ForwardAgent" & "ForwardX11" to "yes" -> then restart ssh service
+_ To fix error with git commit, add the line to before "Host *"
+Host github.com
+   ForwardAgent no
+   ForwardX11 no
+
+Fix "unsupported security type" - VNC remote to Vino-server:
+_ gsettings org.gnome.Vino require-encryption false
+-----------------------------------------------------------------------

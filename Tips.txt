@@ -32,5 +32,6 @@ F3-6: console
 
 Search & reuse old command:
 Ctrl + R -> type command
+To search same command but older, use Ctrl + R again and so on
 
 

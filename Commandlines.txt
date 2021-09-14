@@ -516,3 +516,8 @@ Log out all current user sessions
 -----------------------------------------------------------------------
 loginctl terminate-user <User Name>
 -----------------------------------------------------------------------
+
+Check for wayland or x11 session is being used
+-----------------------------------------------------------------------
+loginctl show-session $(loginctl | grep $(whoami) | awk '{print $1}') -p Type
+-----------------------------------------------------------------------

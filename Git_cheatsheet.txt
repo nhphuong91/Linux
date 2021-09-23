@@ -8,6 +8,7 @@ git clone https://github.com/nhphuong91/Linux.git
 Useful options:
 --depth=1 -> useful for git with long commit history (ex: tensorflow, opencv...)
 --bare -> repo that can only be pushed or pulled from, no direct edit
+-b, --branch -> only clone a specific branch/tag -> cloned repo with display no branch, it's ok; using checkout if wanted
 -----------------------------------------------------------------------
 
 Initialize git

@@ -283,16 +283,18 @@ Fix arduino shortcut
 sudo chown YourUserName /path/to/icon/arduino-arduinoide.desktop
 -----------------------------------------------------------------------
 
-List all files/dir
+Seach for files/dir
 -----------------------------------------------------------------------
-files:
-find "$PWD" -type f
-
-dir:
-find "$PWD" -type d
-
-all
-find "$PWD"
+find <in where>
+-type [bcdpfls]: type of target 
+    f: a regular file
+    d: directory
+    l: symbolic link
+    c: character devices
+    b: block devices
+    p: named pipe (FIFO)
+    s: socket
+-name <name>: name include <name>
 -----------------------------------------------------------------------
 
 List disks/sectors info

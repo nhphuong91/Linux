@@ -1,4 +1,8 @@
-REF: https://docs.opencv.org/4.2.0/d2/de6/tutorial_py_setup_in_ubuntu.html
+NOTE: THIS INSTRUCTION TARGETS AT OPENCV < 4.5.0
+      FOR VER. >= 4.5.0, REFER TO HERE: https://docs.opencv.org/4.5.0/d7/d9f/tutorial_linux_install.html
+
+REF #1: https://docs.opencv.org/4.4.0/d2/de6/tutorial_py_setup_in_ubuntu.html
+REF #2: https://docs.opencv.org/4.4.0/d7/d9f/tutorial_linux_install.html
 
 # Steps for installing opencv
 # Note: Setup all pip2/3 & venv (depending on your choice of python environment for build & install opencv) beforehand
@@ -87,24 +91,27 @@ cmake -D CMAKE_BUILD_TYPE=Release \
     -D PYTHON2(3)_NUMPY_INCLUDE_DIRS=/usr/lib/python<version>/dist-packages/numpy/core/include/
     -D PYTHON_DEFAULT_EXECUTABLE=/usr/bin/python3 \
     -D PYTHON3_PACKAGES_PATH=<virtualenv dir>/lib/python3.6/site-packages/ \
+    -D OPENCV_GENERATE_PKGCONFIG=ON \
     ..
 
 Note: Edit "PYTHON_EXECUTABLE" depend on venv setup
       CMAKE_INSTALL_PREFIX may be unnecessary (default: /usr -> system scope | /usr/local -> user scope)
       PYTHON_DEFAULT_EXECUTABLE may be unnecessary
-      PYTHON(3)_EXECUTABLE=<virtualenv dir>/bin/python(3)
+      PYTHON(3)_EXECUTABLE could be <virtualenv dir>/bin/python(3) or /usr/bin/python(3) depend on whether you use venv or not
+      CUDA_ARCH_BIN must match your nvidia gpu arch - find here: https://developer.nvidia.com/cuda-gpus
       Use "cmake -LA" or use "ccmake ." to view & modify full options list
       Or remove CMakeCache.txt & re-run cmake
       Or manually edit CMakeCache.txt & CMakeVars.txt
       
-Example for using python3 - local scope:
+Example for using python3 - local scope & system python (not venv):
 cmake -D CMAKE_BUILD_TYPE=Release \
+    -D CMAKE_INSTALL_PREFIX=/usr/local \
     -D WITH_CUDA=ON \
     -D WITH_CUDNN=ON \
     -D OPENCV_DNN_CUDA=ON \
     -D ENABLE_FAST_MATH=1 \
     -D CUDA_FAST_MATH=1 \
-    -D CUDA_ARCH_BIN=5.0 \
+    -D CUDA_ARCH_BIN=3.0 \
     -D WITH_CUBLAS=1 \
     -D INSTALL_PYTHON_EXAMPLES=ON \
     -D OPENCV_EXTRA_MODULES_PATH=<path to opencv_contrib dir>/modules \
@@ -118,6 +125,7 @@ cmake -D CMAKE_BUILD_TYPE=Release \
     -D PYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.6m.so \
     -D PYTHON3_NUMPY_INCLUDE_DIRS=/usr/lib/python3/dist-packages/numpy/core/include \
     -D PYTHON3_PACKAGES_PATH=$HOME/.local/lib/python3.6/site-packages \
+    -D OPENCV_GENERATE_PKGCONFIG=ON \
     ..
 -----------------------------------------------------------
 

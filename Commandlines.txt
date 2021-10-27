@@ -447,9 +447,19 @@ params:
 -l <depth> or --level=depth: Specify recursion maximum depth level depth
 -----------------------------------------------------------------------
 
-Extract .zip/tar/tgz file
+Extract compressed file
 -----------------------------------------------------------------------
+# Extract single file:
 tar -xvzf <file>
+unzip <file>
+
+# Extract multiple file:
+cat *.tar.gz | tar zxvf - -i
+unzip \*
+
+# Extract to target dir
+unzip <file> -d <target dir>
+tar -xvJf <file> -C <target dir>
 -----------------------------------------------------------------------
 
 Filter out output list

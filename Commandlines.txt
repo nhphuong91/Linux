@@ -427,10 +427,15 @@ Install the headers for the running kernel
 sudo apt-get install linux-headers-$(uname -r)
 -----------------------------------------------------------------------
 
-View graphic interfaces
+View graphic interfaces or check for its error
 -----------------------------------------------------------------------
 lspci -k | grep VGA
 sudo lshw -c video
+sudo lshw -C display
+
+lspci |grep -i nvidia
+dmesg | grep NVRM
+lspci -v -s $(lspci | grep ' VGA ' | cut -d" " -f 1)
 -----------------------------------------------------------------------
 
 Get online dir/files

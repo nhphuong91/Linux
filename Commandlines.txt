@@ -543,3 +543,15 @@ Record output to log file
 -----------------------------------------------------------------------
 <cmd> 2>&1 | tee <log_file>.log
 -----------------------------------------------------------------------
+
+View pkgs installing history
+-----------------------------------------------------------------------
+# View all
+grep " install " /var/log/dpkg.log
+
+# View recent installs
+awk '$3~/^install$/ {print $4;}' /var/log/dpkg.log
+
+$ View install cmd only (exclude dependencies)
+grep " install " /var/log/apt/history.log
+-----------------------------------------------------------------------

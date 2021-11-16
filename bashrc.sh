@@ -137,9 +137,6 @@ rossetup(){
 alias viewros='export | grep ROS'
 export TURTLEBOT3_MODEL=waffle_pi
 
-# Virtual Environment Wrapper
-alias workoncv-3.4.4="source /home/nhphuong/OpenCV-3.4.4-py3/bin/activate"
-
 # run command after
 #eval "$BASH_POST_RC"
 

@@ -5,7 +5,14 @@ touch <file>.<ext>
 
 Quickly view content of file
 -----------------------------------------------------------------------
+# read all to terminal
 cat <OPTION> <FILE>
+
+# read all then display page by page -> slow for large file
+more <OPTION> <FILE>
+
+# read on-the-fly -> fast even for large file
+less <OPTION> <FILE>
 -----------------------------------------------------------------------
 
 Create directory
@@ -26,6 +33,8 @@ Move to directory
 cd <target dir>
 
 # Move to home
+cd
+or
 cd ~
 
 # Move out

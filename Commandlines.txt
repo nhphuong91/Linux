@@ -564,3 +564,8 @@ awk '$3~/^install$/ {print $4;}' /var/log/dpkg.log
 $ View install cmd only (exclude dependencies)
 grep " install " /var/log/apt/history.log
 -----------------------------------------------------------------------
+
+Move multiple files to other place (in case mv not works: Argument list too long)
+-----------------------------------------------------------------------
+ls | xargs mv -t <dest>
+-----------------------------------------------------------------------

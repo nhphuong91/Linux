@@ -565,7 +565,11 @@ $ View install cmd only (exclude dependencies)
 grep " install " /var/log/apt/history.log
 -----------------------------------------------------------------------
 
-Move multiple files to other place (in case mv not works: Argument list too long)
+xargs usages - Repeat cmd with multiple inputs
 -----------------------------------------------------------------------
+# Move multiple files to other place (in case mv not works: Argument list too long)
 ls | xargs mv -t <dest>
+
+# Repeat cmd (ex: <app> <argv 1> <argv 2>
+ls | xargs -l <app> <argv 1>
 -----------------------------------------------------------------------

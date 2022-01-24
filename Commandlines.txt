@@ -461,6 +461,16 @@ params:
 -l <depth> or --level=depth: Specify recursion maximum depth level depth
 -----------------------------------------------------------------------
 
+Compress files/folder
+-----------------------------------------------------------------------
+# using zip
+zip <output name> <files>
+zip -r <output name> <folder>
+
+# Using tar
+tar -czvf <output name>.tar.gz <files/folder 1> <files/folder 2>
+-----------------------------------------------------------------------
+
 Extract compressed file
 -----------------------------------------------------------------------
 # Extract single file:

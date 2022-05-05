@@ -64,6 +64,8 @@ chmod 644 ~/.ssh/id_rsa.pub
 
 Step 3: Add key
 ssh-add
+If error "Could not open a connection to your authentication agent", run:
+eval "$(ssh-agent)"
 
 Step 4: Verify
 ssh -T git@<git domain>

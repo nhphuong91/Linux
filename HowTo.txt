@@ -167,3 +167,24 @@ Host github.com
 Fix "unsupported security type" - VNC remote to Vino-server:
 _ gsettings org.gnome.Vino require-encryption false
 -----------------------------------------------------------------------
+
+Create disk partition larger than 2TB
+-----------------------------------------------------------------------
+sudo parted /dev/sda
+
+# Create GPT partition
+(parted) mklabel gpt
+
+# Create partition using % or KB/MB/TB/...
+(parted) mkpart primary ext4 0% 50%
+(parted) mkpart primary ext4 50% 100%
+
+# List all partitions
+(parted) print free
+
+# Save & quit
+(parted) quit
+
+# Format partition
+sudo mkfs.ext4 /dev/sda#
+-----------------------------------------------------------------------

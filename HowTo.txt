@@ -188,3 +188,19 @@ sudo parted /dev/sda
 # Format partition
 sudo mkfs.ext4 /dev/sda#
 -----------------------------------------------------------------------
+
+Set static network interface names in Linux with Systemd
+-----------------------------------------------------------------------
+# Create *.link file in /etc/systemd/network/
+sudo nano /etc/systemd/network/01-<interface_name>.link
+
+# Add content below:
+[Match]
+MACAddress=00:50:56:ac:07:30
+
+[Link]
+Name=enp10s0
+
+# Update initramfs & reboot
+sudo update-initramfs -u
+-----------------------------------------------------------------------

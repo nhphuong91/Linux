@@ -153,6 +153,8 @@ reboot
 Fix "nvidia persistence daemon failed"
 -----------------------------------------------------------------------
 sudo apt --fix-broken install
+# If not work, then run below command then try again
+sudo dpkg -i --force-overwrite /var/cache/apt/archives/<package_name>
 -----------------------------------------------------------------------
 
 Desktop-remote stuff

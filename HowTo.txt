@@ -206,3 +206,14 @@ Name=enp10s0
 # Update initramfs & reboot
 sudo update-initramfs -u
 -----------------------------------------------------------------------
+
+Autorun script/command
+-----------------------------------------------------------------------
+Ubuntu: https://askubuntu.com/questions/814/how-to-run-scripts-on-start-up
+# Using crontab: https://askubuntu.com/a/816
+# Using rc.local file: https://askubuntu.com/a/1199
+# Using systemd: https://askubuntu.com/a/719157
+Petalinux (Yocto):
+# Running application: https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18842475/PetaLinux+Yocto+Tips#PetaLinuxYoctoTips-HowtoAutoRunApplicationatStartup
+# Running script: https://stackoverflow.com/a/70562746
+-----------------------------------------------------------------------

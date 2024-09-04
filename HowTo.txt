@@ -217,3 +217,9 @@ Petalinux (Yocto):
 # Running application: https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18842475/PetaLinux+Yocto+Tips#PetaLinuxYoctoTips-HowtoAutoRunApplicationatStartup
 # Running script: https://stackoverflow.com/a/70562746
 -----------------------------------------------------------------------
+
+Fix switch between instances of an app not working (alt + `)
+-----------------------------------------------------------------------
+gsettings reset org.gnome.desktop.wm.keybindings switch-group
+# logout then login again 
+-----------------------------------------------------------------------

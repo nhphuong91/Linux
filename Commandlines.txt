@@ -312,7 +312,7 @@ find <in where>
 
 List disks/sectors info
 -----------------------------------------------------------------------
-sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL
+sudo lsblk -o NAME,FSTYPE,SIZE,FSUSED,FSUSE%,MOUNTPOINT,LABEL,UUID
 sudo fdisk -l </dev/sda>
 -----------------------------------------------------------------------
 

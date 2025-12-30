@@ -1,4 +1,5 @@
 https://nvie.com/posts/a-successful-git-branching-model/
+https://docs.github.com/en/get-started/using-github/github-flow
 https://www.atlassian.com/git/tutorials/
 
 Get git repo

@@ -1,16 +1,16 @@
-Fix “apt update” error
+Fix "apt update" error
 -----------------------------------------------------------------------
-Change URIs link in “/etc/apt/sources.list.d/ubuntu.sources” from “http” to “https”
+Change URIs link in "/etc/apt/sources.list.d/ubuntu.sources" from "http" to "https"
 -----------------------------------------------------------------------
 
 Auto mount Windows network drive
 -----------------------------------------------------------------------
-_ Add content below to “/etc/wsl.conf”
+_ Add content below to "/etc/wsl.conf"
 [automount]
 enabled=true
 mountFsTab=true
 
-_ Add content below to “/etc/fstab”
+_ Add content below to "/etc/fstab"
 X:       /mnt/x    drvfs   defaults      0       0
 
 _ Create mount point

@@ -93,6 +93,11 @@ git merge <target branch> =>> ~ pull request
 Delete branch:
 git branch -d <name>
 
+Restore a deleted branch which was already merged with other branch
+git checkout <branch that merged changes from deleted branch>
+git reflog -> find sha1 of commit within deleted branch
+git checkout -b <branch name> <sha1>
+
 Rename branch:
 git branch -m <oldname> <newname> -> to rename other branch
 or 

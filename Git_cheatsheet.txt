@@ -54,7 +54,7 @@ git commit -m "<descriptive msg>"
 Useful options: --amend (append current staged changes to previous commit)
 -----------------------------------------------------------------------
 
-Revert commits
+Revert/Undo one or muliple commits
 -----------------------------------------------------------------------
 2 methods: reset (best for local commits) & revert (best for pushed commits)
 
